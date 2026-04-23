@@ -1,0 +1,18 @@
+def parse_winner(filename):
+    handle = open(filename)
+
+    for i in handle:
+        data = i.strip().split(" ")
+        tim1 = str(data[0])
+        skortim1 = data[1]
+        skortim2 = data[3]
+        tim2 = str(data[-1])
+
+        if skortim1 > skortim2 :
+            print("Winner: ", tim1)
+        elif skortim2 > skortim1 :
+            print("Winner: ", tim2) 
+        else:
+            print("No Winner: Draw" )
+
+parse_winner("LaLiga.txt")
